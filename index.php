@@ -14,9 +14,8 @@ table, th, td {
 <h1>Witaj w grze kółko i krzyżyk</h1>
 <h3>Zasady:</h3>
 <br>1.Krzyżyk zawsze zaczyna.
-<br>2.Można cofnąć ruch tylko za zgodąobu graczy (klikając guzik cofnięcia strony).
-<br>3.Grać można tylko na jednym komputerze oraz gracze grają na zmiane.
-<br>4.Jeżeli znaczek nie pojawia się odrazu na planszy należy chwilkę odczekać (wina serwera).
+<br>2.Grać można tylko na jednym komputerze oraz gracze grają na zmiane.
+<br>3.Jeżeli znaczek nie pojawia się odrazu na planszy należy chwilkę odczekać (wina serwera).
 
 <?php
 /********************************************************
@@ -202,6 +201,12 @@ if($validate_result == true && $value == 1){
          ";
 }else{
     draw_board($play_ground, $turn, $update_result);
+}
+if($turn >= 8){
+    echo "
+        <h2>Remis!</h2><br>
+        <a href=\"index.php\">Następna runda</a>
+         ";
 }
 
 
